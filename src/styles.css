@@ -35,7 +35,7 @@ body {
   overflow-x: hidden;
 }
 
-/* NAV */
+/* --- NAV ------------------------------------------- */
 nav {
   position: fixed;
   top: 0;
@@ -145,7 +145,7 @@ nav {
   padding: 13px 28px;
 }
 
-/* HERO */
+/* --- HERO ------------------------------------------ */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -271,7 +271,7 @@ nav {
   }
 }
 
-/* DISCLAIMER BANNER */
+/* --- DISCLAIMER BANNER ----------------------------- */
 .disclaimer-banner {
   background: #fffbea;
   border: 1px solid #f0d060;
@@ -290,7 +290,7 @@ nav {
   color: #5a4800;
 }
 
-/* CHAT PREVIEW */
+/* --- CHAT PREVIEW ---------------------------------- */
 .chat-preview {
   width: min(720px, 92vw);
   margin-top: 48px;
@@ -469,7 +469,7 @@ nav {
   color: #fff;
 }
 
-/* SECTION */
+/* --- SECTION --------------------------------------- */
 .section {
   padding: 100px 24px;
   max-width: 1120px;
@@ -588,7 +588,7 @@ nav {
   border-radius: var(--radius-pill);
 }
 
-/* QUOTE / FEATURE STRIP */
+/* --- QUOTE / FEATURE STRIP ------------------------ */
 .quote-strip {
   background: var(--cream);
   border-top: 1px solid var(--border);
@@ -615,7 +615,7 @@ nav {
   font-weight: 500;
 }
 
-/* HOW IT WORKS */
+/* --- HOW IT WORKS ---------------------------------- */
 .how-section {
   padding: 100px 24px;
   background: var(--warm-white);
@@ -729,7 +729,7 @@ nav {
   font-weight: 400;
 }
 
-/* TESTIMONIALS */
+/* --- TESTIMONIALS ---------------------------------- */
 .testimonials-section {
   padding: 100px 24px;
   background: var(--cream);
@@ -803,7 +803,7 @@ nav {
   color: var(--text-muted);
 }
 
-/* PLANS */
+/* --- PLANS ----------------------------------------- */
 .plans-section {
   background: var(--warm-white);
   border-top: 1px solid var(--border);
@@ -938,7 +938,7 @@ nav {
   background: var(--cream-dark);
 }
 
-/* FINE PRINT */
+/* --- FINE PRINT ------------------------------------ */
 .fine-print {
   background: #fffbea;
   border-top: 1px solid #f0d060;
@@ -969,7 +969,7 @@ nav {
   margin-top: 10px;
 }
 
-/* FOOTER */
+/* --- FOOTER ---------------------------------------- */
 footer {
   background: var(--text-primary);
   color: rgba(255, 255, 255, 0.7);
@@ -1059,7 +1059,7 @@ footer {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* SCROLL-REVEAL */
+/* --- SCROLL-REVEAL --------------------------------- */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -1071,7 +1071,7 @@ footer {
   transform: translateY(0);
 }
 
-/* RESPONSIVE */
+/* --- RESPONSIVE ------------------------------------ */
 @media (max-width: 900px) {
   .caps-grid {
     grid-template-columns: repeat(2, 1fr);

@@ -1,3 +1,9 @@
+// Import the ENTIRE lodash library
+import _ from 'lodash-es'
+
+// But only use one tiny function
+//const name = _.capitalize('hello world')
+
 // Scroll reveal
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
