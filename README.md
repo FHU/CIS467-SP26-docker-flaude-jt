@@ -45,7 +45,7 @@ EXPOSE 80
 You can use this command throughout the lab to build and run your image:
 
 ```bash
-docker build -t lab-nginx . && docker run --rm -p 8080:80 lab-nginx
+docker build -t flaude-nginx . && docker run --rm -p 8080:80 flaude-nginx
 ```
 
 ---
@@ -82,6 +82,17 @@ curl -I http://localhost:8080/
 ### 0.1 - Reflection Question
 > What headers does nginx send by default? Are any of them surprising?
 
+> The Last-Modified suprised me as the docker file was made later than the Last-Modified date. I didn't know ETag was for caching either.
+```
+Server: nginx/1.29.5
+Date: Wed, 11 Mar 2026 18:21:48 GMT
+Content-Type: text/html
+Content-Length: 19820
+Last-Modified: Mon, 09 Mar 2026 18:24:46 GMT
+Connection: keep-alive
+ETag: "69af106e-4d6c"
+Accept-Ranges: bytes
+```
 ---
 
 ## Checkpoint 1 — Compression
@@ -112,6 +123,9 @@ check the **Response Headers** panel.
 
 ### 1.1 Reflection Question
 > Why does `gzip_min_length` exist? What's the cost of compressing a 200-byte file?
+
+> To not waste time processing small files that would be faster to just send over the network uncompressed
+
 
 ---
 
