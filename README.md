@@ -350,10 +350,13 @@ You should have a complete, working config. Review it as a whole and identify an
 Submit a short written response (200-500 words) answering the following:
 
 1. Which configuration had the most visible impact when you verified it? Why?
+> I would say the most impact would be the security headers, probably because it added the most amount of headers and the most amount of code in the nginx.conf. However, the most "bang-for-your-buck" that happened is the rate limiting of checkpoint 5. This is because it gave the logic to block a lot of concurrent calls with just three lines of code. When I verified it, it simply gave back the 429 without me having to change any other files.
 2. Choose one header or directive you added. Research what a real-world attack
    looks like that it mitigates, and describe it briefly.
+> Looking at https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy the Refferer-Policy, with "strict-origin-when-cross-origin", the main use of it is to prevent leaking data to other sites (and thus attackers). It does seem, based on https://security.stackexchange.com/questions/66165/does-referrer-header-checking-offer-any-real-world-security-improvement that it could be circumvented, but it would be better to make someone have to circumevent than to just let "the low hanging fruit" also be able to attack you.
 3. What does this lab reveal about what managed hosting platforms like Netlify
    are silently doing on your behalf?
+> Caching, Security, and API limiting seem to be the three aspects that you don't have to keep up with (as much) when using a hosting platform. With the caching, I had to choose myself what files and for how long they needed to be cached for my users. I also had to specify the security headers, even though a lot of them are what is normally used for deployed applications. For the API rate limiting, I had to manually specify what is the limit and for who; managed hosting platforms could have more advanced rate limiting than me because they have a firmer grasp on it than I do now.
 
 ---
 
