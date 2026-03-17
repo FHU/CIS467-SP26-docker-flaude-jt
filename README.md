@@ -124,7 +124,8 @@ check the **Response Headers** panel.
 ### 1.1 Reflection Question
 > Why does `gzip_min_length` exist? What's the cost of compressing a 200-byte file?
 
-> To not waste time processing small files that would be faster to just send over the network uncompressed
+> To not waste time processing small files that would be faster to just send over the network uncompressed. The cost of compressing a 200-byte file is that even
+> if it was to become a 100-byte file, the overhead of the function would not even be made up by the transfer speed.
 
 
 ---
@@ -155,8 +156,9 @@ location ~* \.(js|css|png|jpg|woff2|mp4)$ {
 
 ```bash
 curl -I http://localhost:8080/index.html
-curl -I http://localhost:8080/My_Differential_Equation.mp4
+curl -I http://localhost:8080/assets/My_Differential_Equation.cs8Lh0j6.mp4
 ```
+(had to change curl link for mp4, due to it changing in the dist)
 
 Confirm different `Cache-Control` values on each response.
 
@@ -164,6 +166,9 @@ Confirm different `Cache-Control` values on each response.
 > Why would caching `index.html` aggressively be dangerous for a single-page app?
 > What would happen if a user's browser cached a stale `index.html` pointing to
 > old JS bundles?
+
+> A single-page app would likely change the index.html every single update.
+> The old JS bundles might still work, but be unoptimized or actually simply broken due to relying on certain APIs.
 
 ---
 
