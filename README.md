@@ -295,8 +295,7 @@ Some responses should return `429 Too Many Requests` once the burst is exhausted
 > Rate limiting on a static site might seem overkill — when would it actually
 > matter in production?
 
-> 
-
+> When the site starts using API calls to any server. Or when some crazy person sets up a bot to ruin your site. Static sites still eat up bandwidth, so if the site gets super popular, it might have to limit some people so it doesn't just crash and burn. So I would say it almost always matters in production, even in a static site.
 ---
 
 ## Checkpoint 6 — Block Sensitive Paths
@@ -334,6 +333,9 @@ curl -I http://localhost:8080/.env
 ### 6.1 - Reflection Question
 > Why return `404` instead of `403 Forbidden`? What information does each
 > status code leak to an attacker?
+
+> To give out a 403 would signal to an attacker that the specific file they are rooting around for is actually in the production server, and they would focus their attacks there specifically. (As they would gain knowledge about the folder structure.)
+> 403 Forbidden is used mainly for when security tokens (for stuff that people already can know is there) are not valid.
 
 ---
 
