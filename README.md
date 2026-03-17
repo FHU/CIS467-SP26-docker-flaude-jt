@@ -254,6 +254,9 @@ error_page 404 /404.html;
 > If every route returns `index.html` with a 200, what are the SEO implications?
 > How do SSR frameworks like Next.js solve this problem?
 
+> Crawlers for SEO might have a harder time judging the quality of the site due to the fact that every page returns a 200 (instead of a 404 for obviously false pages). Also, there would be duplicate data given to the crawlers. (also if javascript/typescript is used to renderstuff, that rendering might be too long for a crawler to care about so it might just get the base HTML)
+> Next.js solves this by actually making the separate HTML files to serve to the crawlers rather than assuming they will let the javascript run, so the application's server does the rendering of the HTML page, and sends the full version to the crawler.
+
 ---
 
 ## Checkpoint 5 — Rate Limiting
@@ -291,6 +294,8 @@ Some responses should return `429 Too Many Requests` once the burst is exhausted
 ### 5.1 - Reflection Question
 > Rate limiting on a static site might seem overkill — when would it actually
 > matter in production?
+
+> 
 
 ---
 
