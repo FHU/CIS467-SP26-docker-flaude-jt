@@ -206,6 +206,8 @@ a tunneling tool, or deploy to a VPS for full scoring).
 > and observe the browser console error. What does this teach you about
 > how CSP is enforced?
 
+> I added an alert script to the index, and it still loaded the page, but the alert did not appear. So it blocked the inline-script while still loading the page.
+
 ---
 
 ## Checkpoint 4 — SPA Routing Fallback
